@@ -12,11 +12,10 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+} from "@/components/ui/form";import { Input } from "@/components/ui/input";
 import { useAuth } from "@/contexts/auth-context";
-import { useState } from "react";
-import { Loader2 } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Loader2 } from "lucide-react"; // Import useRef here
 import { useTranslation } from "@/hooks/use-translation";
 
 const loginFormSchema = z.object({
@@ -28,7 +27,7 @@ type LoginFormValues = z.infer<typeof loginFormSchema>;
 
 export function LoginForm() {
   const { login } = useAuth();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // Make sure useRef is imported
   const { t } = useTranslation();
 
   const form = useForm<LoginFormValues>({
@@ -39,6 +38,7 @@ export function LoginForm() {
     },
   });
 
+  // Adicionar este useEffect
   async function onSubmit(data: LoginFormValues) {
     setIsLoading(true);
     await login(data.email, data.password);
@@ -46,7 +46,6 @@ export function LoginForm() {
     // If login fails, user might want to correct their input
     setIsLoading(false);
   }
-
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
