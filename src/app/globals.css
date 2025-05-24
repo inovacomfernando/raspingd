@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 98%; /* Light Gray */
+    --foreground: 220 15% 25%; /* Dark Gray for text */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 220 15% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 25%;
+
+    --primary: 145 63% 32%; /* Dark Green */
+    --primary-foreground: 0 0% 100%; /* White for text on dark green */
+
+    --secondary: 145 50% 92%; /* Very Light Green/Gray for secondary backgrounds */
+    --secondary-foreground: 145 63% 30%; /* Dark Green for text on light green */
+
+    --muted: 0 0% 94%; /* Slightly darker muted tone */
+    --muted-foreground: 220 10% 45%; /* Softer text for muted elements */
+
+    --accent: 145 55% 45%; /* Medium Green for accents like active sidebar item */
+    --accent-foreground: 0 0% 100%; /* White for text on accent green */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 90%; /* Light Gray Border */
+    --input: 0 0% 100%; /* White input background */
+    --ring: 145 55% 45%; /* Medium Green for focus rings */
+
+    --chart-1: 145 63% 32%; /* Dark Green */
+    --chart-2: 145 50% 50%; /* Lighter Green */
+    --chart-3: 145 40% 60%; /* Even Lighter Green */
+    --chart-4: 120 40% 65%; /* Softer Green */
+    --chart-5: 150 30% 70%; /* Muted Green */
+
+    --radius: 0.8rem; /* Increased radius for more rounded look */
+
+    /* Sidebar specific theme variables */
+    --sidebar-background: 0 0% 100%; /* White sidebar for clean look */
+    --sidebar-foreground: 220 15% 25%; /* Dark text */
+    --sidebar-primary: 145 55% 45%; /* Medium Green for active/hover states */
+    --sidebar-primary-foreground: 0 0% 100%; /* White for text on primary */
+    --sidebar-accent: 145 50% 95%; /* Very Light Green for hover on non-active sidebar items */
+    --sidebar-accent-foreground: 145 63% 30%; /* Dark green for text on hover */
+    --sidebar-border: 0 0% 90%; /* Border for sidebar elements if needed */
+    --sidebar-ring: 145 55% 45%; /* Ring color for focus within sidebar */
+  }
+
+  .dark {
+    --background: 220 20% 12%; /* Dark slate gray */
+    --foreground: 0 0% 95%; /* Light text */
+
+    --card: 220 20% 16%; /* Slightly lighter dark for cards */
+    --card-foreground: 0 0% 95%;
+
+    --popover: 220 20% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 145 50% 55%; /* Brighter Green for Dark Mode */
+    --primary-foreground: 145 63% 15%; /* Very Dark Green for text on primary */
+
+    --secondary: 220 20% 20%; /* Darker secondary background */
+    --secondary-foreground: 0 0% 90%; 
+
+    --muted: 220 20% 20%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 145 45% 60%; /* Brighter Medium Green for accents */
+    --accent-foreground: 145 63% 15%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 220 20% 25%;
+    --input: 220 20% 16%;
+    --ring: 145 45% 60%; 
+
+    --chart-1: 145 50% 55%;
+    --chart-2: 145 45% 65%;
+    --chart-3: 145 35% 70%;
+    --chart-4: 120 35% 70%;
+    --chart-5: 150 25% 75%;
+    
+    /* Dark Sidebar */
+    --sidebar-background: 220 20% 14%; /* Slightly lighter than main dark bg */
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 145 50% 55%;
+    --sidebar-primary-foreground: 145 63% 15%;
+    --sidebar-accent: 220 20% 18%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 220 20% 25%;
+    --sidebar-ring: 145 45% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
