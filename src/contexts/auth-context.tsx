@@ -107,7 +107,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       const sessionUser: User = { id: user.id, name: user.name, email: user.email, avatarUrl: user.avatarUrl };
       setCurrentUser(sessionUser);
       localStorage.setItem(LOCAL_STORAGE_SESSION_KEY, JSON.stringify(sessionUser));
-      toast({ title: t('auth.login.success.title'), description: t('auth.login.success.description', { name: user.name }) });
       return true;
     }
     toast({ title: t('auth.login.error.invalidCredentialsTitle'), description: t('auth.login.error.invalidCredentialsDesc'), variant: "destructive" });
@@ -139,7 +138,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     const sessionUser: User = { id: newUser.id, name: newUser.name, email: newUser.email, avatarUrl: newUser.avatarUrl };
     setCurrentUser(sessionUser);
     localStorage.setItem(LOCAL_STORAGE_SESSION_KEY, JSON.stringify(sessionUser));
-    toast({ title: t('auth.signup.success.title'), description: t('auth.signup.success.description', { name: newUser.name }) });
     return true;
   };
 
@@ -163,8 +161,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   const logout = () => {
     setCurrentUser(null);
-    localStorage.removeItem(LOCAL_STORAGE_SESSION_KEY);
-    router.push('/auth');
     toast({ title: t('auth.logout.successTitle') });
   };
 

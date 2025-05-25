@@ -5,6 +5,15 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "function": "nextApp"
+      }
     ]
+  },
+  "storage": {
+    "rules": "storage.rules"
   }
 }

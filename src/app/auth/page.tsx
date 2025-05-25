@@ -65,18 +65,7 @@ export default function AuthPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Tabs defaultValue="login" className="w-full">
-            <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="login">{t('auth.tabs.login')}</TabsTrigger>
-              <TabsTrigger value="signup">{t('auth.tabs.signup')}</TabsTrigger>
-            </TabsList>
-            <TabsContent value="login" className="mt-6">
-              <LoginForm />
-            </TabsContent>
-            <TabsContent value="signup" className="mt-6">
-              <SignupForm />
-            </TabsContent>
-          </Tabs>
+ <LoginForm />
         </CardContent>
       </Card>
       <p className="mt-6 text-center text-xs text-muted-foreground">
