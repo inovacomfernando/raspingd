@@ -1,7 +1,10 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  // ✅ Ignora erros de build (temporariamente, útil para não travar o deploy)
+  // ❌ REMOVIDO: 'export' só é usado para sites 100% estáticos
+  // output: 'export',
+
+  // ✅ Ignora erros de build para facilitar deploy inicial
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -9,7 +12,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
 
-  // ✅ Permite imagens externas de placehold.co
+  // ✅ Permite carregar imagens externas de placehold.co
   images: {
     remotePatterns: [
       {
@@ -21,16 +24,16 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  // ✅ Webpack customizado
+  // ✅ Configuração Webpack personalizada
   webpack: (config, { isServer }) => {
-    // Suporte a JSON loader (como usado pelo i18n ou outros pacotes antigos)
+    // Suporte a JSON loader
     config.module.rules.push({
       test: /\.json$/,
       use: 'json-loader',
       type: 'javascript/auto',
     });
 
-    // Correções para pacotes que usam APIs exclusivas do Node.js
+    // Evita tentar importar módulos nativos no client
     if (!isServer) {
       config.externals = {
         ...config.externals,
