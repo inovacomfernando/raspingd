@@ -8,7 +8,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyCO5NwIrZjYcC2j0yhz8PUsBRj4F7goObM",
   authDomain: "marketwise-scraper.firebaseapp.com",
   projectId: "marketwise-scraper",
-  storageBucket: "marketwise-scraper.firebasestorage.app",
+  storageBucket: "marketwise-scraper.appspot.com",
   messagingSenderId: "254450404570",
   appId: "1:254450404570:web:a642610cd4935294dde9e3"
 };
